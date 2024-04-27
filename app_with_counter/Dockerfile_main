@@ -1,9 +1,11 @@
 FROM python:3.11-slim
+LABEL author=${LABEL}
 
 COPY . ./main_app
 WORKDIR main_app 
 RUN pip3 install -r requirements_main.txt
 VOLUME /speeches
 
-EXPOSE 4648
-CMD ["uvicorn", "main_app.main:app", "--host", "0.0.0.0", "--port", "4648"]
+EXPOSE ${MAIN_APP_PORT}
+
+CMD uvicorn main_app.main:app --port ${MAIN_APP_PORT} --host 0.0.0.0

@@ -11,7 +11,7 @@
 
 
 
-Для запуска:
+###  Для запуска локально:
 
 ```bash
 python3 -m venv ./venv
@@ -21,7 +21,7 @@ pip3 install -r requirements_main.txt
 uvicorn main_app.main:app --host 0.0.0.0 --port 4648
 ```
 
-в новом терминале перейдите в директорию, где лежат README.MD
+в новом терминале перейдите в директорию, где лежит этот README.MD
 ```bash
 source venv/bin/activate
 uvicorn counter_app.main:app --host 0.0.0.0 --port 4649
@@ -48,8 +48,8 @@ docker image build . --file Dockerfile_main --tag app_with_counter:main
 - run
 
 ```bash
-docker container run --publish 4648:4648  --name main_app -d --network host app_with_counter:main
-docker container run --publish 4649:4649  --name counter -d  app_with_counter:counter
+docker container run --name main_app -d --network host  --env-file .env app_with_counter:main
+docker container run --publish 4649:1602 --name counter -d --env-file .env app_with_counter:counter
 ```
 
 
