@@ -1,10 +1,12 @@
 FROM python:3.11-slim
 LABEL author=${LABEL}
 
-COPY . ./main_app
-WORKDIR main_app 
+
+COPY . ./app_with_counter
+WORKDIR app_with_counter 
+
 RUN pip3 install -r requirements_main.txt
-VOLUME /speeches
+#VOLUME /speeches
 
 EXPOSE ${MAIN_APP_PORT}
 
