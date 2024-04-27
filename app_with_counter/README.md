@@ -18,7 +18,7 @@ python3 -m venv ./venv
 source venv/bin/activate
 pip3 install -r requirements_counter.txt
 pip3 install -r requirements_main.txt
-uvicorn main_app.main:app --host 0.0.0.0 --port 4648
+uvicorn main_app.main:app --host 0.0.0.0 --port 1702
 ```
 
 в новом терминале перейдите в директорию, где лежит этот README.MD
@@ -31,7 +31,7 @@ uvicorn counter_app.main:app --host 0.0.0.0 --port 4649
 
 ```bash
 #общение с коровой
-curl http://127.0.0.1:4648/cowsay?input_=Muuu!
+curl http://127.0.0.1:1702/cowsay?input_=Muuu!
 #сколько раз обратились к корове?
 curl http://127.0.0.1:4649/get_counts
 ```
