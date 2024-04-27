@@ -35,7 +35,7 @@ curl http://127.0.0.1:4648/cowsay?input_=Muuu!
 #сколько раз обратились к корове?
 curl http://127.0.0.1:4649/get_counts
 ```
-
+cd
 
 ### Запуск в Docker
 -  build
